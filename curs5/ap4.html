@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mydemo {
+        color: red;
+        border: 2px solid blue;
+        width: 100%;
+        max-width: 32%;
+        position: relative;
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <section id="demo"></section>
+    <script>
+        function drawTags(numeTag, numeClasa, continut, repetari) {
+            for (let i = 0; i < repetari; i++) {
+                createTag(numeTag, continut);
+                newAttribute(numeClasa, numeTag, i);
+            }
+        };
+
+        function createTag(numeTag, continut) {
+            const newTag = document.createElement(numeTag, continut);
+            newTag.innerHTML = continut;
+
+            document.getElementById('demo').appendChild(newTag);
+        };
+        function newAttribute(valAttr, newTag, nrTag) {
+            const att = document.createAttribute('class');
+            att.value = valAttr;
+
+            newTag = document.getElementsByTagName(newTag)[nrTag];
+            newTag.setAttributeNode(att);
+        };
+
+        drawTags('h1', 'demo', 'buna ziua', 4);
+        drawTags('h2', 'mydemo', 'buna seara', 6);
+
+    </script>
+</body>
+
+</html>

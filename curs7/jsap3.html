@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 1. array.push() - adauga la final un element nou si returneaza lungimea Arrayului
+        var fruit = ['apple', 'orange', 'grapes'];
+        var fruitnew = fruit.push('watermelon', 'kiwi');
+        console.log(fruit);
+        console.log(fruitnew);
+        // 2. array.pop() -
+        let nume = fruit.pop();
+        console.log(fruit);
+        console.log(nume);
+        // 3. unshift()
+        fruit.unshift('ananas');
+        console.log(fruit);
+        fruit.shift();
+        console.log(fruit);
+
+        fruit.forEach(afiseaza); // facem o functie afiseaza
+        function afiseaza(item) {
+            console.log(item);
+        }
+
+        let myArr = fruit.map(item => item.toUpperCase);
+        console.log(myArr);
+
+        // 4. filter ();
+
+        const arr = [10, 20, 30, 40, 50, 60];
+
+        const filtered = arr.filter(num => num > 40);
+        console.log(filtered);
+        console.log(arr);
+
+        
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

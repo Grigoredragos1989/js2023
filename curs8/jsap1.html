@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- metoda 1 -->
+    <button onclick="alert('s-a dat click')"> data este ? </button>
+
+    <!-- <button onclick="this.innerText = Date()"> apasa ptr data </button> -->
+
+    <!-- metoda 2  -->
+    <button onclick="myFunction(this)"> data este: </button>
+
+    <!-- metoda 3 , cea recomandata -->
+    <button id="myDemo"> add event listener</button>
+
+    <script>
+
+        function myFunction(obj) {
+            obj.innerHTML = Date();
+        }
+
+        let myButton = document.getElementById("myDemo");
+        myButton.addEventListener('click', function (event) {
+            const element = event.target;
+            element.innerHTML = Date();
+        });
+
+
+    </script>
+</body>
+
+</html>
